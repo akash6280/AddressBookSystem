@@ -202,3 +202,17 @@ function viewPersonByState(state){
 
 viewPersonByCity("Bangalore");
 viewPersonByState("Karnataka");
+
+function countByCity(city) {
+    let countByCity = addressBook.filter((contact) => contact.city == city).reduce((total) => total+= 1, 0)
+    console.log(countByCity)
+    
+}
+
+function countByState(state) {
+    let countByState = addressBook.filter((contact) => contact.state == state).reduce((total) => total+=1, 0)
+    console.log(countByState);
+}
+
+countByCity("Bangalore");
+countByState("Karnataka");
