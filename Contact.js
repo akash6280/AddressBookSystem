@@ -216,3 +216,9 @@ function countByState(state) {
 
 countByCity("Bangalore");
 countByState("Karnataka");
+
+function sortByName() {
+  console.log(addressBook.sort((contact1, contact2)=> contact1.firstName.localeCompare(contact2.firstName)));
+}
+
+sortByName(); 
