@@ -117,9 +117,16 @@ class Contact{
     }
 
 }
-try{
-    let contact = new Contact("Tony","Stark","Hosur","Banglore","Karnataka",567654,8789878656,"stark@gmail.com");
-    console.log(contact.toString());
-}catch(e){
-    console.error(e);
+let contact1 = new Contact("Tony","Stark","Hosur","Banglore","Karnataka",567654,8789878656,"stark@gmail.com");
+let contact2 = new Contact("Mark","Lewis","Bellandur","Banglore","Karnataka",567324,7364586372,"mark@gmail.com");
+let addressBook=new Array();
+addContact(contact1);
+addContact(contact2);
+function addContact(contact){
+    if (!contactPresent(contact.firstName))
+        addressBook.push(contact)
 }
+function contactPresent(firstName) {
+    return addressBook.some(contact => contact.firstName == firstName);
+}
+
