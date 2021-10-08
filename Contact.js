@@ -167,3 +167,10 @@ function editContactInformation(choice,firstName,newValue) {
 
 editContactInformation(8,"Tony","tony@gmail.com");
 console.log(addressBook);
+function deleteContact(firstName){
+    if(contactPresent(firstName))
+    addressBook=addressBook.filter(contact=>contact.firstName != firstName);
+}
+
+deleteContact("Tony");
+console.log(addressBook);
