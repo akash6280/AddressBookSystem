@@ -174,3 +174,9 @@ function deleteContact(firstName){
 
 deleteContact("Tony");
 console.log(addressBook);
+
+function getCount(){
+    let count = addressBook.reduce((total) => total+=1, 0);
+    console.log(count);
+}
+getCount();
