@@ -191,3 +191,14 @@ function searchPersonAcrossCity(firstName,city) {
 
 searchPersonAcrossCity("Tony","Bangalore");
 searchPersonAcrossState("Mark","Karnataka");
+
+function viewPersonByCity(city){
+    console.log(addressBook.filter(contact=>contact.city==city));
+}
+
+function viewPersonByState(state){
+    console.log(addressBook.filter(contact=>contact.state==state));
+}
+
+viewPersonByCity("Bangalore");
+viewPersonByState("Karnataka");
