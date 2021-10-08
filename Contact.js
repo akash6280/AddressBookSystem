@@ -117,8 +117,8 @@ class Contact{
     }
 
 }
-let contact1 = new Contact("Tony","Stark","Hosur","Banglore","Karnataka",567654,8789878656,"stark@gmail.com");
-let contact2 = new Contact("Mark","Lewis","Bellandur","Banglore","Karnataka",567324,7364586372,"mark@gmail.com");
+let contact1 = new Contact("Tony","Stark","Hosur","Bangalore","Karnataka",567654,8789878656,"stark@gmail.com");
+let contact2 = new Contact("Mark","Lewis","Bellandur","Bangalore","Karnataka",567324,7364586372,"mark@gmail.com");
 let addressBook=new Array();
 addContact(contact1);
 addContact(contact2);
@@ -172,7 +172,7 @@ function deleteContact(firstName){
     addressBook=addressBook.filter(contact=>contact.firstName != firstName);
 }
 
-deleteContact("Tony");
+//deleteContact("Tony");
 console.log(addressBook);
 
 function getCount(){
@@ -180,3 +180,14 @@ function getCount(){
     console.log(count);
 }
 getCount();
+
+function searchPersonAcrossState(firstName,state) {
+   console.log(addressBook.filter(contact=>contact.state==state&&contact.firstName==firstName));
+}
+
+function searchPersonAcrossCity(firstName,city) {
+    console.log(addressBook.filter(contact=>contact.city==city&&contact.firstName==firstName));
+}
+
+searchPersonAcrossCity("Tony","Bangalore");
+searchPersonAcrossState("Mark","Karnataka");
