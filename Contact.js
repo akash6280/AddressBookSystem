@@ -130,3 +130,40 @@ function contactPresent(firstName) {
     return addressBook.some(contact => contact.firstName == firstName);
 }
 
+function editContactInformation(choice,firstName,newValue) {
+    if (contactPresent(firstName)) {
+        switch (choice) {
+            case 1: addressBook.find((contact) => contact.firstName == firstName).firstName = newValue;
+                break;
+            case 2:
+                addressBook.find((contact) => contact.firstName == firstName).lastName = newValue;
+                break;
+            case 3:
+                addressBook.find((contact) => contact.firstName == firstName).address = newValue;
+                break;
+            case 4:
+                addressBook.find((contact) => contact.firstName == firstName).city = newValue;
+                break;
+            case 5:
+                addressBook.find((contact) => contact.firstName == firstName).state = newValue;
+                break;
+            case 6:
+                addressBook.find((contact) => contact.firstName == firstName).zip = newValue;
+                break;
+            case 7:
+                addressBook.find((contact) => contact.firstName == firstName).phoneNumber = newValue;
+                break;
+            case 8:
+                addressBook.find((contact) => contact.firstName == firstName).email = newValue;
+                break;
+            default:
+                console.log("Invalid index");
+        }
+    }
+    else {
+        console.log("contact not present");
+    }
+}
+
+editContactInformation(8,"Tony","tony@gmail.com");
+console.log(addressBook);
